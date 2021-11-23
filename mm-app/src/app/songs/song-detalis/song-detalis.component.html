@@ -1,0 +1,27 @@
+<div class="content" *ngIf="songsDetalis">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{songsDetalis.songName}}</mat-card-title>
+            <mat-card-subtitle>{{songsDetalis.artistName}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-divider></mat-divider>
+            <h3 class="FieldName">Entry Date </h3> <span>{{songsDetalis.entryDate | date:'MMM d, y'}}</span>
+            <mat-divider></mat-divider>
+            <h3 class="FieldName">Edited </h3> <span>{{songsDetalis.editDate | date:'MMM d, y'}}</span>
+            <mat-divider></mat-divider>
+            <h3 class="FieldName">Category </h3> <span>{{songsDetalis.category.categoryName}}</span>
+            <mat-divider></mat-divider>
+            <h3 class="FieldName">Rate </h3> <mat-icon inline="true">{{returnStar(songsDetalis.rate)}}</mat-icon>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+
+
+        <mat-dialog-actions align="end">
+            <a mat-raised-button color="warn" href="{{songsDetalis.songUrl}}" target="_blank">YouTube</a><br>
+            <button mat-button mat-dialog-close>Close</button>
+        </mat-dialog-actions>
+    </mat-card>
+</div>

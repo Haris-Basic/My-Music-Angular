@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span>My Music</span>
+
+  <span class="example-spacer"></span>
+  <div *ngIf="!isAuthenticated()">
+
+
+    <a mat-raised-button mat-button href="Logout">Login</a>
+  </div>
+
+  <div *ngIf="isAuthenticated()">
+    <a mat-raised-button mat-button href="login" (click)="logOut()">Logout</a>
+  </div>
+
+
+</mat-toolbar>
