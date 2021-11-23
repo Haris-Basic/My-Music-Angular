@@ -23,7 +23,7 @@
                 <p>
                     <mat-form-field appearance="fill">
                         <mat-label>Select category</mat-label>
-                        <mat-select (selectionChange)="changeClient($event.value)">
+                        <mat-select (selectionChange)="changeCategory($event.value)">
                             <mat-option *ngFor="let item of categoryes"
                                 [value]="item.categoryId">
                                 {{item.categoryName}}

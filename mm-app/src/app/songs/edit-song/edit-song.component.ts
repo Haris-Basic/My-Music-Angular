@@ -56,6 +56,11 @@ export class EditSongComponent implements OnInit {
   }
 
   save(){
+    if(this.selectedCat > 0)
+    {
+      this.editFormDetalis.value.categoryId = this.selectedCat;
+    }
+
     this.http.put<any>('https://localhost:44319/api/Songs/'+ this.songId,this.editFormDetalis.value).subscribe(() =>{
       this._snackBar.open("Uspjesno editovanje");
       this.router.navigateByUrl('/songs/list');
@@ -72,7 +77,7 @@ export class EditSongComponent implements OnInit {
     })
   }
 
-  changeClient(value) {
+  changeCategory(value) {
     this.selectedCat = value;
   }
 

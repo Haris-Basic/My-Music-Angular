@@ -50,7 +50,7 @@ export class AddSongComponent implements OnInit {
     })
   }
 
-  changeClient(value) {
+  changeCategory(value) {
     this.selectedCat = value;
   }
 
