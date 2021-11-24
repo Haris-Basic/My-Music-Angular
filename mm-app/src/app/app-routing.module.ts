@@ -9,15 +9,15 @@ import { ListSongsComponent } from './songs/list-songs/list-songs.component';
 
 const routes: Routes = [
   
-  { path: 'songs',
-      children: [
-        { path: '', component:ListSongsComponent },
-        { path: 'list', component:ListSongsComponent },
-        { path: 'create', component:AddSongComponent },
-        { path: 'delete/:id', component:DeleteSongComponent },
-        { path: 'edit/:id', component:EditSongComponent },
-      ], canActivate: [AuthGuard]},
-    { path: 'login', component: LoginComponent}
+   { path: 'songs',
+       children: [
+         { path: '', component:ListSongsComponent },
+         { path: 'list', component:ListSongsComponent,canActivate: [AuthGuard] },
+         { path: 'create', component:AddSongComponent },
+         { path: 'delete/:id', component:DeleteSongComponent },
+         { path: 'edit/:id', component:EditSongComponent },
+       ], canActivate: [AuthGuard]},
+   { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

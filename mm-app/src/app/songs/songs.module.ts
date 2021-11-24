@@ -20,6 +20,11 @@ import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 
+export function tokenGetter(){
+  return localStorage.getItem("jwt");
+}
+
+
 @NgModule({
   declarations: [
     ListSongsComponent,
@@ -44,7 +49,7 @@ import { MatButtonToggleModule} from '@angular/material/button-toggle';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatButtonToggleModule,
+    MatButtonToggleModule
     
   ],
   providers: [{ provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } }]
